@@ -32,7 +32,7 @@ client.on('ready', async () => {
       state: 'Project Open',
       application_id: '1566412255757865032',
       assets: {
-        large_image: 'unity', // Lowercase asset key with snake_case
+        large_image: '1000325844', // Lowercase asset key with snake_case
         large_text: 'Unity 2022.3.2f1'
       }
     }]
