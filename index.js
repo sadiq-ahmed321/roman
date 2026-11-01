@@ -23,6 +23,7 @@ setInterval(() => {
 client.on('ready', async () => {
   console.log(`[+] Logged in successfully as ${client.user.tag}!`);
   
+  // External Direct Image Link Bypass Hack (No App ID)
   client.user.setPresence({
     status: 'online',
     activities: [{
@@ -30,15 +31,14 @@ client.on('ready', async () => {
       type: 'PLAYING',
       details: 'Editing LIVE-INDIA Scene',
       state: 'Project Open',
-      application_id: '1566412255757865032',
       assets: {
-        large_image: '1000325844', // Lowercase asset key with snake_case
-        large_text: 'Unity 2022.3.2f1'
+        largeImage: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg', // Direct public SVG/PNG link
+        largeText: 'Unity 2022.3.2f1'
       }
     }]
   });
   
-  console.log('[+] Rich Presence presence updated!');
+  console.log('[+] External image Rich Presence activated!');
 });
 
 const token = process.env.DISCORD_TOKEN;
