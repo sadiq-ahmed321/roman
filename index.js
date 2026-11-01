@@ -23,17 +23,20 @@ setInterval(() => {
 client.on('ready', async () => {
   console.log(`[+] Logged in successfully as ${client.user.tag}!`);
   
-  // Clean Official Unity Rich Presence (Logo handled natively via App ID)
+  // Discord CDN Proxy format for custom external images
+  const unityLogoUrl = 'https://i.imgur.com/2X86PZ7.png'; // High quality Unity logo
+  
   const rpc = new RichPresence(client)
     .setType('PLAYING')
     .setName('Unity')
     .setDetails('Editing LIVE-INDIA Scene')
     .setState('Project Open')
     .setApplicationId('715421574311051284')
+    .setAssetsLargeImage(`mp:external/${unityLogoUrl.replace('https://', '')}`)
     .setAssetsLargeText('Unity 2022.3.2f1');
 
   client.user.setPresence({ activities: [rpc], status: 'online' });
-  console.log('[+] Official Unity Rich Presence activated successfully!');
+  console.log('[+] Official Unity Rich Presence with Proxy Image activated!');
 });
 
 const token = process.env.DISCORD_TOKEN;
