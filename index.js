@@ -23,7 +23,7 @@ setInterval(() => {
 client.on('ready', async () => {
   console.log(`[+] Logged in successfully as ${client.user.tag}!`);
   
-  // Direct Raw Activity Payload with External Proxy Image
+  // Direct PNG Unity Logo using Discord Proxy Format
   client.user.setPresence({
     status: 'online',
     activities: [{
@@ -33,13 +33,13 @@ client.on('ready', async () => {
       state: 'Project Open',
       application_id: '715421574311051284',
       assets: {
-        large_image: 'mp:external/raw.githubusercontent.com/devicons/devicon/master/icons/unity/unity-original.svg',
+        large_image: 'mp:external/raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/unity.png',
         large_text: 'Unity 2022.3.2f1'
       }
     }]
   });
   
-  console.log('[+] Raw Unity Rich Presence with Image activated!');
+  console.log('[+] Unity Rich Presence with PNG Logo activated!');
 });
 
 const token = process.env.DISCORD_TOKEN;
