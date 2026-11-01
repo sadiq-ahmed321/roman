@@ -33,7 +33,7 @@ client.on('ready', async () => {
       state: 'Project Open',
       application_id: '1566412255757865032',
       assets: {
-        largeImage: 'unity', // CamelCase key for selfbot library
+        largeImage: 'Unity', // CamelCase key for selfbot library
         largeText: 'Unity 2022.3.2f1'
       }
     }]
