@@ -23,18 +23,17 @@ setInterval(() => {
 client.on('ready', async () => {
   console.log(`[+] Logged in successfully as ${client.user.tag}!`);
   
-  // Official Unity Rich Presence with Direct Code Asset Mapping
+  // Clean Official Unity Rich Presence (Logo handled natively via App ID)
   const rpc = new RichPresence(client)
     .setType('PLAYING')
     .setName('Unity')
     .setDetails('Editing LIVE-INDIA Scene')
     .setState('Project Open')
     .setApplicationId('715421574311051284')
-    .setAssetsLargeImage('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg')
     .setAssetsLargeText('Unity 2022.3.2f1');
 
   client.user.setPresence({ activities: [rpc], status: 'online' });
-  console.log('[+] Unity Rich Presence with logo activated successfully!');
+  console.log('[+] Official Unity Rich Presence activated successfully!');
 });
 
 const token = process.env.DISCORD_TOKEN;
