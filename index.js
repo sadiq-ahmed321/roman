@@ -23,18 +23,17 @@ setInterval(() => {
 client.on('ready', async () => {
   console.log(`[+] Logged in successfully as ${client.user.tag}!`);
   
+  // Clean & Stable Rich Presence Setup (Unity Logo will load automatically via App ID)
   const rpc = new RichPresence(client)
     .setType('PLAYING')
     .setName('Unity')
     .setDetails('Editing LIVE-INDIA Scene')
     .setState('Project Open')
     .setApplicationId('715421574311051284')
-    // Discord ke default asset keys ya direct image keys yahan set honge
-    .setAssetsLargeImage('https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/a47738ee-9b5d-11e6-905c-00163ed833e7/2711099662/unity-editor-logo.png')
     .setAssetsLargeText('Unity 2022.3.2f1');
 
   client.user.setPresence({ activities: [rpc], status: 'online' });
-  console.log('[+] Official Unity Engine Rich Presence with Image activated!');
+  console.log('[+] Official Unity Rich Presence activated successfully!');
 });
 
 const token = process.env.DISCORD_TOKEN;
