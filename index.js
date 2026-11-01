@@ -23,7 +23,7 @@ setInterval(() => {
 client.on('ready', async () => {
   console.log(`[+] Logged in successfully as ${client.user.tag}!`);
   
-  // Direct PNG Unity Logo using Discord Proxy Format
+  // Official Unity Rich Presence with Developer Portal Asset
   client.user.setPresence({
     status: 'online',
     activities: [{
@@ -31,15 +31,15 @@ client.on('ready', async () => {
       type: 'PLAYING',
       details: 'Editing LIVE-INDIA Scene',
       state: 'Project Open',
-      application_id: '715421574311051284',
+      application_id: '1566412255757865032',
       assets: {
-        large_image: 'mp:external/raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/unity.png',
+        large_image: 'unity', // Developer portal par jo asset name dala hai
         large_text: 'Unity 2022.3.2f1'
       }
     }]
   });
   
-  console.log('[+] Unity Rich Presence with PNG Logo activated!');
+  console.log('[+] Official Unity Rich Presence with Logo activated successfully!');
 });
 
 const token = process.env.DISCORD_TOKEN;
