@@ -23,7 +23,7 @@ setInterval(() => {
 client.on('ready', async () => {
   console.log(`[+] Logged in successfully as ${client.user.tag}!`);
   
-  // Official Unity Rich Presence with Developer Portal Asset
+  // Exact Asset Mapping for Selfbot Rich Presence
   client.user.setPresence({
     status: 'online',
     activities: [{
@@ -33,13 +33,13 @@ client.on('ready', async () => {
       state: 'Project Open',
       application_id: '1566412255757865032',
       assets: {
-        large_image: 'unity', // Developer portal par jo asset name dala hai
-        large_text: 'Unity 2022.3.2f1'
+        largeImage: 'unity', // CamelCase key for selfbot library
+        largeText: 'Unity 2022.3.2f1'
       }
     }]
   });
   
-  console.log('[+] Official Unity Rich Presence with Logo activated successfully!');
+  console.log('[+] Unity Rich Presence with Asset Key activated!');
 });
 
 const token = process.env.DISCORD_TOKEN;
