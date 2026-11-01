@@ -1,4 +1,4 @@
-const { Client, RichPresence } = require('discord.js-selfbot-v13');
+const { Client } = require('discord.js-selfbot-v13');
 const express = require('express');
 const http = require('http');
 
@@ -23,20 +23,23 @@ setInterval(() => {
 client.on('ready', async () => {
   console.log(`[+] Logged in successfully as ${client.user.tag}!`);
   
-  // Discord CDN Proxy format for custom external images
-  const unityLogoUrl = 'https://i.imgur.com/2X86PZ7.png'; // High quality Unity logo
+  // Direct Raw Activity Payload with External Proxy Image
+  client.user.setPresence({
+    status: 'online',
+    activities: [{
+      name: 'Unity',
+      type: 'PLAYING',
+      details: 'Editing LIVE-INDIA Scene',
+      state: 'Project Open',
+      application_id: '715421574311051284',
+      assets: {
+        large_image: 'mp:external/raw.githubusercontent.com/devicons/devicon/master/icons/unity/unity-original.svg',
+        large_text: 'Unity 2022.3.2f1'
+      }
+    }]
+  });
   
-  const rpc = new RichPresence(client)
-    .setType('PLAYING')
-    .setName('Unity')
-    .setDetails('Editing LIVE-INDIA Scene')
-    .setState('Project Open')
-    .setApplicationId('715421574311051284')
-    .setAssetsLargeImage(`mp:external/${unityLogoUrl.replace('https://', '')}`)
-    .setAssetsLargeText('Unity 2022.3.2f1');
-
-  client.user.setPresence({ activities: [rpc], status: 'online' });
-  console.log('[+] Official Unity Rich Presence with Proxy Image activated!');
+  console.log('[+] Raw Unity Rich Presence with Image activated!');
 });
 
 const token = process.env.DISCORD_TOKEN;
